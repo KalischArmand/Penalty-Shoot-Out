@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penalty Shootout</title>
+    <style>
+        #goal-area {
+            width: 400px;
+            height: 200px;
+            border: 2px solid #000;
+            position: relative;
+            margin: 20px auto;
+        }
+        #ball {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+<h1>${message}</h1>
+<div id="goal-area">
+    <div id="ball"></div>
+</div>
+<button onclick="shoot()">Shoot!</button>
+<script>
+    function shoot() {
+        const ball = document.getElementById('ball');
+        const x = Math.random() * 350 + 25; // Random position
+        const y = Math.random() * 150 + 25;
+        ball.style.left = `${x}px`;
+        ball.style.top = `${y}px`;
+        alert("Goal attempt!");
+    }
+</script>
+</body>
+</html>
